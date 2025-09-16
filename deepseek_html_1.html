@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTech UK Ltd - Sustainable Wood Pellet Manufacturing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a472a;
+            --primary-dark: #0d2818;
+            --primary-light: #2d593e;
+            --secondary-color: #b68a3c;
+            --accent-color: #8daa91;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #e9ecef;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #a37a30;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/img1.jpeg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero .container {
+            padding-left: 50px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: var(--white);
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background: url('images/about_us.jpeg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            border-top: 1px solid var(--gray);
+            padding-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+            padding: 0 15px;
+            border-right: 1px solid var(--gray);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background-color: var(--background-light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-light);
+            color: var(--white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .step h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step p {
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image-1 {
+            background: url('images/premium_pellets.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+
+        .product-image-2 {
+            background: url('images/industrial_pellets.jpeg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+
+        .product-image-3 {
+            background: url('images/animal_pellets.jpeg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .product-info ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .product-info ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .product-info ul li:before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Sustainability Section */
+        .sustainability {
+            padding: 100px 0;
+            background-color: var(--background-light);
+        }
+
+        .sustainability-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sustainability-text {
+            flex: 1;
+        }
+
+        .sustainability-image {
+            flex: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 350px;
+            background: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .certifications {
+            margin-top: 30px;
+        }
+
+        .certifications h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .cert {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            color: var(--primary-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            border: 1px solid var(--primary-color);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 20px;
+            padding: 14px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Lato', sans-serif;
+            transition: var(--transition);
+            font-weight: 400;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            transition: var(--transition);
+            font-weight: 400;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 400;
+            color: #999;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 4px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .close-modal:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .sustainability-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .stats {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .stat {
+                flex: 0 0 calc(50% - 20px);
+                border-right: none;
+                border-bottom: 1px solid var(--gray);
+                padding-bottom: 20px;
+            }
+            
+            .stat:last-child {
+                border-bottom: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                box-shadow: var(--shadow);
+                padding: 20px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stat {
+                flex: 0 0 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero .container {
+                padding-left: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+            
+            .process-steps,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ECOTECH <span>UK</span> LTD</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>INDUSTRIAL WOOD PELLET SOLUTIONS</h2>
+                <p>UK leader in manufacturing premium wood pellets from recycled wood waste for commercial and industrial applications</p>
+                <a href="#products" class="btn">Explore Our Products</a>
+                <a href="#contact" class="btn btn-secondary" style="margin-left: 15px;">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About EcoTech UK Ltd</h2>
+                <p>Leading the UK biomass industry with sustainable wood pellet manufacturing solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>EcoTech UK Ltd is an industrial manufacturing company specializing in producing high-quality wood pellets from 100% recycled wood waste. Our state-of-the-art facilities process post-industrial and post-consumer wood materials that would otherwise end up in landfills.</p>
+                    <p>By transforming this waste into efficient, clean-burning fuel, we're helping reduce carbon emissions and promoting a circular economy. Our pellets are certified sustainable and provide an eco-friendly alternative to fossil fuels for commercial and industrial applications.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>120,000+</h3>
+                            <p>Tons Annual Production</p>
+                        </div>
+                        <div class="stat">
+                            <h3>95%</h3>
+                            <p>Carbon Emission Reduction</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Sustainable Sourcing</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Industrial Operations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Manufacturing Process</h2>
+                <p>Advanced industrial processes transforming waste wood into premium pellets</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3>Collection</h3>
+                    <p>We collect clean wood waste from construction sites, manufacturers, and recycling centers.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Sorting & Cleaning</h3>
+                    <p>Wood is carefully sorted to remove contaminants and prepared for processing.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Grinding</h3>
+                    <p>Wood is reduced to consistent-sized particles using industrial grinders.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Drying</h3>
+                    <p>Moisture content is reduced to optimal levels for pellet production.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Pelletizing</h3>
+                    <p>Wood particles are compressed under high pressure to form dense pellets.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Packaging</h3>
+                    <p>Pellets are cooled and packaged for distribution to customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Industrial Products</h2>
+                <p>High-quality wood pellets for various commercial and industrial applications</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image product-image-1"></div>
+                    <div class="product-info">
+                        <h3>Premium Heating Pellets</h3>
+                        <p>Our highest grade pellets for residential and commercial heating, with low ash content and high BTU output.</p>
+                        <ul>
+                            <li>Ash content: &lt; 0.5%</li>
+                            <li>BTU: 8,500+ per lb</li>
+                            <li>Package: 40 lb bags or bulk</li>
+                            <li>Certification: ENplus A1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-image-2"></div>
+                    <div class="product-info">
+                        <h3>Industrial Pellets</h3>
+                        <p>Cost-effective pellets designed for commercial and industrial boiler systems and power generation.</p>
+                        <ul>
+                            <li>Ash content: &lt; 2%</li>
+                            <li>BTU: 8,200+ per lb</li>
+                            <li>Bulk delivery available</li>
+                            <li>Custom formulations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-image-3"></div>
+                    <div class="product-info">
+                        <h3>Animal Bedding Pellets</h3>
+                        <p>Highly absorbent pellets that break down into soft bedding for horses and livestock.</p>
+                        <ul>
+                            <li>Super absorbent</li>
+                            <li>Dust-free formulation</li>
+                            <li>Natural odor control</li>
+                            <li>Veterinarian approved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="sustainability">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sustainability Commitment</h2>
+                <p>Building a sustainable future through responsible manufacturing practices</p>
+            </div>
+            <div class="sustainability-content">
+                <div class="sustainability-text">
+                    <p>At EcoTech UK Ltd, sustainability isn't just a buzzword—it's the foundation of everything we do. Our manufacturing process helps divert thousands of tons of wood waste from landfills each year, reducing methane emissions and conserving natural resources.</p>
+                    <p>Our pellets are carbon neutral, as the carbon dioxide released during combustion is equivalent to what the trees absorbed during their growth cycle. By choosing EcoTech UK Ltd, you're supporting a circular economy and reducing dependence on fossil fuels.</p>
+                    <div class="certifications">
+                        <h3>Our Certifications & Compliance</h3>
+                        <div class="certs">
+                            <div class="cert">ENplus® Certified</div>
+                            <div class="cert">FSC® Certified</div>
+                            <div class="cert">ISO 9001:2015</div>
+                            <div class="cert">Sustainable Biomass Program</div>
+                            <div class="cert">EPA Compliant</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sustainability-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Team</h2>
+                <p>Get in touch to learn more about our industrial wood pellet solutions</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>ECOTECH UK LTD</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Ecotech Industrial Estate, UK</p>
+                    <p><i class="fas fa-phone"></i> 00 44 888899999</p>
+                    <p><i class="fas fa-envelope"></i> info@ecotechukltd.com</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <input type="text" placeholder="Company Name">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ECOTECH UK LTD</h3>
+                    <p>Transforming wood waste into sustainable energy solutions for a cleaner tomorrow through industrial manufacturing excellence.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#products">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Premium Heating Pellets</a></li>
+                        <li><a href="#">Industrial Pellets</a></li>
+                        <li><a href="#">Animal Bedding</a></li>
+                        <li><a href="#">Bulk Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#" class="modal-link" data-modal="accessibility">Accessibility</a></li>
+                        <li><a href="#" class="modal-link" data-modal="compliance">Compliance</a></li>
+                        <li><a href="#" class="modal-link" data-modal="disclaimer">Disclaimer</a></li>
+                        <li><a href="#" class="modal-link" data-modal="slavery-act">Modern Slavery Act</a></li>
+                        <li><a href="#" class="modal-link" data-modal="privacy">Privacy Notices</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Ecotech UK Ltd</p>
+                    <p>UK</p>
+                    <p>info@ecotechukltd.com</p>
+                    <p>00 44 88889999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EcoTech UK Ltd. All rights reserved. | Industrial Wood Pellet Manufacturing</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Windows -->
+    <div id="accessibility" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Accessibility Statement</h2>
+            <p>EcoTech UK Ltd is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+            <h3>Conformance Status</h3>
+            <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines explain how to make web content more accessible for people with disabilities.</p>
+            <h3>Feedback</h3>
+            <p>We welcome your feedback on the accessibility of our website. Please let us know if you encounter accessibility barriers.</p>
+        </div>
+    </div>
+
+    <div id="compliance" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Compliance Information</h2>
+            <p>EcoTech UK Ltd is committed to full compliance with all applicable laws, regulations, and industry standards in our operations.</p>
+            <h3>Environmental Compliance</h3>
+            <p>Our manufacturing processes meet or exceed all environmental regulations. We hold permits for air quality, water usage, and waste management.</p>
+            <h3>Quality Standards</h3>
+            <p>Our products conform to international quality standards including ENplus and ISO 9001 certifications.</p>
+        </div>
+    </div>
+
+    <div id="disclaimer" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Website Disclaimer</h2>
+            <p>The information contained on this website is for general information purposes only. While we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+            <p>Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+        </div>
+    </div>
+
+    <div id="slavery-act" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Modern Slavery Act Statement</h2>
+            <p>EcoTech UK Ltd is committed to ensuring that there is no modern slavery or human trafficking in our supply chains or in any part of our business.</p>
+            <h3>Our Approach</h3>
+            <p>We operate a zero-tolerance approach to modern slavery and are committed to acting ethically and with integrity in all our business relationships. We implement and enforce effective systems and controls to ensure modern slavery is not taking place anywhere in our supply chains.</p>
+            <h3>Due Diligence</h3>
+            <p>We conduct due diligence on all suppliers before entering into business relationships and regularly review our existing relationships.</p>
+        </div>
+    </div>
+
+    <div id="privacy" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Privacy Notices</h2>
+            <p>EcoTech UK Ltd is committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible way.</p>
+            <h3>Information We Collect</h3>
+            <p>We may collect personal information such as your name, email address, phone number, and company details when you contact us or place an order.</p>
+            <h3>How We Use Your Information</h3>
+            <p>We use your information to process orders, respond to inquiries, and provide you with relevant information about our products and services.</p>
+            <h3>Data Security</h3>
+            <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+
+        // Modal functionality
+        const modalLinks = document.querySelectorAll('.modal-link');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        modalLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
